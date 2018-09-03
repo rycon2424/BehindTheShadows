@@ -6,25 +6,45 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     //Declare variables
-    protected JoyButton joybutton;
-    protected bool use;
+    public GameObject pauseScreen;
+    public bool isPaused;
 
-	void Start ()
+    public GameObject joystick;
+
+    void Start ()
     {
-        joybutton = FindObjectOfType<JoyButton>();
 	}
 
     void Update()
     {
-        if (!use && joybutton.Pressed)
-        {
-            use = true;
-            //Type here what to do
-        }
 
-        if (use && !joybutton.Pressed)
+    }
+
+    public void Use()
+    {
+        Debug.Log("Use");
+        //Type here what to do
+    }
+
+    public void Peek()
+    {
+        Debug.Log("Peek");
+        //Type here what to do
+    }
+
+    public void Pause()
+    {
+        joystick.SetActive(false);
+        if (!isPaused)
         {
-            use = false;
+            pauseScreen.SetActive(false);
+            isPaused = true;
+        }
+        else
+        {
+            pauseScreen.SetActive(true);
+            isPaused = false;
         }
     }
+
 }
