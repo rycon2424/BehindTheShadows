@@ -23,7 +23,6 @@ public class JoyStick : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             pointA = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, Camera.main.transform.position.z));
-    
             handle.transform.position = pointA * 1;
             background.transform.position = pointA * 1;
             //Show joystick on screen
@@ -49,7 +48,6 @@ public class JoyStick : MonoBehaviour
             Vector2 offset = pointB - pointA;
             Vector2 direction = Vector2.ClampMagnitude(offset, 1.0f);
             MoveCharacter(direction * 1);
-
             handle.transform.position = new Vector2(pointA.x + direction.x, pointA.y + direction.y) * 1;
         }
         else

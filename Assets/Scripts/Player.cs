@@ -6,13 +6,12 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     //Declare variables
-    public GameObject pauseScreen;
-    public bool isPaused;
-
-    public GameObject joystick;
+    public bool canUse = false;
+    public bool canPeek = false;
 
     void Start ()
     {
+
 	}
 
     void Update()
@@ -20,30 +19,12 @@ public class Player : MonoBehaviour
 
     }
 
-    public void Use()
+    void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("Use");
-        //Type here what to do
-    }
-
-    public void Peek()
-    {
-        Debug.Log("Peek");
-        //Type here what to do
-    }
-
-    public void Pause()
-    {
-        joystick.SetActive(false);
-        if (!isPaused)
+        if (collision.gameObject.name == "test")
         {
-            pauseScreen.SetActive(false);
-            isPaused = true;
-        }
-        else
-        {
-            pauseScreen.SetActive(true);
-            isPaused = false;
+            canUse = true;
+            canPeek = true;
         }
     }
 
