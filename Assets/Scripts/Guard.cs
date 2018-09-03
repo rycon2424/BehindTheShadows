@@ -6,12 +6,12 @@ public class Guard : MonoBehaviour
 {
 
     [Header("States/Stats")]
-    public bool standing;
-    public bool walking;
+    public bool standing;       //if this guard is standing
+    public bool walking;        //if this guard is walking
     [Header(" ")]
-    public bool alert = false;
-    public float speed;
-    public float rotateSpeedCalm;
+    public bool alert = false;  //Alert Phase check
+    public float speed;         //Running speed towards player
+    public float rotateSpeedCalm;   //RotationSpeed when standing still (No Alarm)
 
     [Header("Spots")]
     public bool spottedPlayer = false;
@@ -121,4 +121,16 @@ public class Guard : MonoBehaviour
         canRotate = true;
     }
     #endregion
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            //Gameobject.SetActive(false);
+            Debug.Log("Start Minigame");
+            //Gameobject.SetActive(true);
+            Debug.Log("Disable alle gameobjects");
+            Destroy(this.gameObject);
+        }
+    }
 }
