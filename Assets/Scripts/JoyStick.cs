@@ -23,7 +23,7 @@ public class JoyStick : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             pointA = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, Camera.main.transform.position.z));
-            handle.transform.position = pointA * 1;
+            handle.transform.position = background.transform.position * 1;
             background.transform.position = pointA * 1;
             //Show joystick on screen
             handle.GetComponent<SpriteRenderer>().enabled = true;

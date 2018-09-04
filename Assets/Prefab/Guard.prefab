@@ -285,7 +285,7 @@ MonoBehaviour:
   speedWalk: 4
   spottedPlayer: 0
   playerLocation: {fileID: 0}
-  raycastRange: 5
+  raycastRange: 8
   rotateSpeed: 0.25
   time: 2
   anim: {fileID: 0}
