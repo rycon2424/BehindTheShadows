@@ -32,7 +32,7 @@ public class Manager : MonoBehaviour
             if (spawn.isEnded == true)
             {
                 //Type here what to do
-                Debug.Log("You won");
+                Debug.Log("Done with spawning");
             }
         }
         else

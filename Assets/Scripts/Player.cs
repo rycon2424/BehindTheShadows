@@ -14,6 +14,8 @@ public class Player : MonoBehaviour
     public bool canUse = false;
     public bool canPeek = false;
 
+    public bool isLooking;
+
     void Start ()
     {
 
@@ -31,24 +33,7 @@ public class Player : MonoBehaviour
             if (Input.GetMouseButtonUp(0))
             {
                 gun.isShooting = false;
-            }
-            
-           /* //Calculate the distance between all guards and pick the closest
-            float distClosest = Mathf.Infinity;
-            Guard closest = null;
-            Guard[] all = GameObject.FindObjectsOfType<Guard>();
-            
-            foreach (Guard cur in all)
-            {
-                float distEnemy = (cur.transform.position - this.transform.position).sqrMagnitude;
-                if (distEnemy < distClosest)
-                {
-                    distClosest = distEnemy;
-                    closest = cur;
-                }
-            }
-            //Look at the closest guard
-            transform.LookAt(closest.transform.position);*/
+            }      
         }
     }
 
@@ -69,6 +54,14 @@ public class Player : MonoBehaviour
             //You're not able to use the door or peek
             canUse = false;
             canPeek = false;
+        }
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Guard")
+        {
+            transform.LookAt(other.transform.position);
         }
     }
 
