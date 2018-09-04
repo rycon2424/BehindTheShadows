@@ -9,7 +9,7 @@ public class Manager : MonoBehaviour
     float playTime;
     float raiseTime = 10f;
 
-    GameObject player;
+    public Player player;
 
     public GameObject joystick;
     public GameObject pauseScreen;
@@ -34,14 +34,20 @@ public class Manager : MonoBehaviour
     // * BUTTONS * \\ 
     public void Use()
     {
-        Debug.Log("Use");
-        //Type here what to do
+        if (player.canUse)
+        {
+            //Type here what to do
+            Debug.Log("Use");
+        }
     }
 
     public void Peek()
     {
-        Debug.Log("Peek");
-        //Type here what to do
+        if (player.canPeek)
+        {
+            //Type here what to do
+            Debug.Log("Peek");
+        }
     }
 
     public void Pause()
