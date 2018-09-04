@@ -34,8 +34,12 @@ public class Guard : MonoBehaviour
     bool startTimer = true;      //alertTimer
     bool canRotate = true;       //If the guard can rotate
 
+    [Header(" ")]
+    public Animator anim;
+
     void Start()
     {
+        anim = GetComponent<Animator>();
         currentGuard = this.gameObject;
         playerLocation = GameObject.Find("Player");
         if (walking)
@@ -50,11 +54,17 @@ public class Guard : MonoBehaviour
         Alert();
         if (walking && !alert)
         {
+            anim.SetInteger("State", 0);
             WalkingSystem();
         }
         if (standing && !alert)
         {
+            anim.SetInteger("State", 1);
             StandingGuard();
+        }
+        if (alert)
+        {
+            anim.SetInteger("State", 1);
         }
     }
 
