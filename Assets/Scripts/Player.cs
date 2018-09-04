@@ -33,7 +33,7 @@ public class Player : MonoBehaviour
             if (Input.GetMouseButtonUp(0))
             {
                 gun.isShooting = false;
-            }      
+            }  
         }
     }
 
@@ -62,7 +62,7 @@ public class Player : MonoBehaviour
         if (other.gameObject.tag == "Guard")
         {
             transform.LookAt(other.transform.position);
+            isLooking = false;
         }
     }
-
 }
