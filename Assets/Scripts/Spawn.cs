@@ -23,7 +23,7 @@ public class Spawn : MonoBehaviour
             if (timer >= timeToSpawn)
             {
                 randomX = Random.Range(-8, 8);
-                randomY = Random.Range(0, 4);
+                randomY = Random.Range(1, 4);
                 Instantiate(guardPref, new Vector3(randomX, randomY, 0), Quaternion.identity);
                 timer = 0;
                 timeToSpawn = Random.Range(0.5f, 1.0f);
