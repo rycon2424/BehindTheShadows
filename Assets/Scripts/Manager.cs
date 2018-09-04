@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class Manager : MonoBehaviour
 {
+    //Declare variables
+    public enum GameType { Normal, Minigame1 };
+    public GameType type;
+
     [HideInInspector]
     public int difficulty;
     float playTime;
@@ -15,9 +19,27 @@ public class Manager : MonoBehaviour
     public GameObject pauseScreen;
     public bool isPaused;
 
+    public Spawn spawn;
+    public GameObject spawner;
+
+
     void Update()
     {
-        
+        if (type == GameType.Minigame1)
+        {
+            //Spawner enabled
+            spawner.SetActive(true);
+            if (spawn.isEnded == true)
+            {
+                //Type here what to do
+                Debug.Log("You won");
+            }
+        }
+        else
+        {
+            //Spawner disabled
+            spawner.SetActive(false);
+        }
     }
 
     void FixedUpdate()
