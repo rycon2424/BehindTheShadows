@@ -13,6 +13,13 @@ public class Guard : MonoBehaviour
     public float speed;         //Running speed towards player
     public float rotateSpeedCalm;   //RotationSpeed when standing still (No Alarm)
 
+    [Header("Waypoints")]
+    GameObject currentGuard;
+    public GameObject[] waypoints = new GameObject[3];
+    public int currentWaypoint;
+    public int rotateOnWaypoint;    //How much the guard rotates(z) when reaching a waypoint
+    public int speedWalk;           //Normal walking speed
+
     [Header("Spots")]
     public bool spottedPlayer = false;
 
@@ -29,13 +36,22 @@ public class Guard : MonoBehaviour
 
     void Start()
     {
+        currentGuard = this.gameObject;
         playerLocation = GameObject.Find("Player");
+        if (walking)
+        {
+            currentWaypoint = 0;
+        }
     }
 
     void Update()
     {
         RayCast();
         Alert();
+        if (walking && !alert)
+        {
+            WalkingSystem();
+        }
         if (standing && !alert)
         {
             StandingGuard();
@@ -90,6 +106,26 @@ public class Guard : MonoBehaviour
             StartCoroutine(Rotate());
             transform.Rotate(new Vector3(0, 0, rotateSpeedCalm));
         }
+    }
+
+    void WalkingSystem()
+    {
+        currentGuard.transform.position = Vector3.MoveTowards(currentGuard.transform.position,
+        waypoints[currentWaypoint].transform.position, speedWalk * Time.deltaTime);
+
+        if (currentWaypoint < waypoints.Length)
+        {
+            if (Vector3.Distance(currentGuard.transform.position, waypoints[currentWaypoint].transform.position) < 0.1f)
+            {
+                currentWaypoint++;
+                transform.Rotate(0, 0, rotateOnWaypoint);
+            }
+        }
+        if (currentWaypoint == waypoints.Length)
+        {
+            currentWaypoint = 0;
+        }
+
     }
 
     #endregion
