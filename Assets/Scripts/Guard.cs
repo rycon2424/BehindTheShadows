@@ -20,13 +20,14 @@ public class Guard : MonoBehaviour
     public int rotateOnWaypoint;    //How much the guard rotates(z) when reaching a waypoint
     public int speedWalk;           //Normal walking speed
 
-    [Header("Spots")]
+    [Header(" ")]
     public bool spottedPlayer = false;
 
     [Header("RayCasts")]
     Ray myRay;
     RaycastHit hit;
     public GameObject playerLocation;
+    public float raycastRange;
 
     [Header("Alert")]
     public float rotateSpeed;
@@ -73,9 +74,9 @@ public class Guard : MonoBehaviour
     void RayCast()
     {
         myRay = new Ray(transform.position, transform.up);
-        Debug.DrawRay(transform.position, transform.up * 30f);
+        Debug.DrawRay(transform.position, transform.up * raycastRange);
 
-        if (Physics.Raycast(myRay, out hit, 30f))
+        if (Physics.Raycast(myRay, out hit, raycastRange))
         {
             if (hit.collider.tag == "Player")
             {
