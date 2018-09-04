@@ -21,7 +21,7 @@ public class UnderShadowMinigame : MonoBehaviour {
 
     IEnumerator Cooldown()
     {
-        yield return new WaitForSecondsRealtime(3f);
+        yield return new WaitForSecondsRealtime(2f);
         whatAttack = Random.Range(1, 4);
         if (whatAttack == 1)
         {
@@ -35,7 +35,7 @@ public class UnderShadowMinigame : MonoBehaviour {
         {
             Instantiate(Lasers[2], Lasers[2].transform.position, Lasers[2].transform.rotation);
         }
-        yield return new WaitForSecondsRealtime(1f);
+        yield return new WaitForSecondsRealtime(2f);
         attackCooldown = true;
     }
         
