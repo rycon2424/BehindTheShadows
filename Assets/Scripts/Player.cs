@@ -32,27 +32,24 @@ public class Player : MonoBehaviour
             {
                 gun.isShooting = false;
             }
-        }
-        FindClosestEnemy();
-    }
-
-    void FindClosestEnemy()
-    {
-        float distClosest = Mathf.Infinity;
-        Guard closest = null;
-        Guard[] all = GameObject.FindObjectsOfType<Guard>();
-
-        foreach (Guard cur in all)
-        {
-            float distEnemy = (cur.transform.position - this.transform.position).sqrMagnitude;
-            if (distEnemy < distClosest)
+            
+           /* //Calculate the distance between all guards and pick the closest
+            float distClosest = Mathf.Infinity;
+            Guard closest = null;
+            Guard[] all = GameObject.FindObjectsOfType<Guard>();
+            
+            foreach (Guard cur in all)
             {
-                distClosest = distEnemy;
-                closest = cur;
+                float distEnemy = (cur.transform.position - this.transform.position).sqrMagnitude;
+                if (distEnemy < distClosest)
+                {
+                    distClosest = distEnemy;
+                    closest = cur;
+                }
             }
+            //Look at the closest guard
+            transform.LookAt(closest.transform.position);*/
         }
-
-        transform.LookAt(closest.transform);
     }
 
     void OnCollisionEnter(Collision collision)
