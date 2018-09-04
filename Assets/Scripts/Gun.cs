@@ -13,11 +13,6 @@ public class Gun : MonoBehaviour
     private float shotTimer;
 
     public Transform firePoint;
-
-	void Start ()
-    {
-		
-	}
 	
 	void Update ()
     {
