@@ -14,7 +14,6 @@ public class Player : MonoBehaviour
     public bool canUse = false;
     public bool canPeek = false;
 
-    public bool isLooking;
 
     void Start ()
     {
@@ -62,7 +61,6 @@ public class Player : MonoBehaviour
         if (other.gameObject.tag == "Guard")
         {
             transform.LookAt(other.transform.position);
-            isLooking = false;
         }
     }
 

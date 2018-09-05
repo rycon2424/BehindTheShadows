@@ -10,7 +10,7 @@ public class Spawn : MonoBehaviour
     private float timeToSpawn;
     private float maxSpawn = 30;
     private float randomX;
-    private float randomY;
+    private float randomZ;
 
     public bool isEnded = false;
 	
@@ -18,13 +18,13 @@ public class Spawn : MonoBehaviour
     {
         if (maxSpawn <= 30)
         { 
-            timeToSpawn = Random.Range(0.5f, 1.0f);
+            timeToSpawn = Random.Range(0.2f, 0.5f);
             timer += Time.deltaTime;
             if (timer >= timeToSpawn)
             {
-                randomX = Random.Range(-8, 8);
-                randomY = Random.Range(1, 4);
-                Instantiate(guardPref, new Vector3(randomX, randomY, 0), Quaternion.identity);
+                randomX = Random.Range(-10, 10);
+                randomZ = Random.Range(5, 8);
+                Instantiate(guardPref, new Vector3(randomX, 0, randomZ), Quaternion.identity);
                 timer = 0;
                 timeToSpawn = Random.Range(0.5f, 1.0f);
             }
