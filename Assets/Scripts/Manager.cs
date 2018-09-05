@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Manager : MonoBehaviour
 {
@@ -17,6 +18,8 @@ public class Manager : MonoBehaviour
 
     public GameObject joystick;
     public GameObject pauseScreen;
+    public GameObject panel;
+
     public bool isPaused;
 
     public Spawn spawn;
@@ -45,9 +48,9 @@ public class Manager : MonoBehaviour
         {
             playTime = 0f;
             difficulty++;
-        }   
+        }
     }
-    
+
     // * BUTTONS * \\ 
     public void Use()
     {
@@ -84,4 +87,27 @@ public class Manager : MonoBehaviour
             joystick.SetActive(false);
         }
     }
+
+    public void Resume()
+    {
+        pauseScreen.SetActive(false);
+    }
+
+    public void Exit()
+    {
+        pauseScreen.SetActive(false);
+        panel.SetActive(true);
+    }
+
+    public void ExitYes()
+    {
+        SceneManager.LoadScene(0);
+    }
+
+    public void ExitNo()
+    {
+        panel.SetActive(false);
+        pauseScreen.SetActive(true);
+    }
 }
+
