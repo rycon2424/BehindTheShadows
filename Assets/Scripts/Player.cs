@@ -56,7 +56,7 @@ public class Player : MonoBehaviour
             canPeek = false;
         }
     }
-   
+
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Guard")
@@ -65,4 +65,6 @@ public class Player : MonoBehaviour
             isLooking = false;
         }
     }
+
+
 }
