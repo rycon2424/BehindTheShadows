@@ -21,6 +21,12 @@ public class Guard_Minigame1 : MonoBehaviour
         transform.LookAt(player.transform.position);
         transform.Rotate(90, 0, 0);
         transform.Translate(Vector3.up * speed * Time.deltaTime);
+
+        //Destroy Guard by leaving minigame
+        if(GameManager.Minigame == false)
+        {
+            Destroy(gameObject);
+        }
     }
 
     void OnCollisionEnter(Collision col)
