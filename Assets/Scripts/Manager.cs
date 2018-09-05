@@ -29,11 +29,6 @@ public class Manager : MonoBehaviour
         {
             //Spawner enabled
             spawner.SetActive(true);
-            if (spawn.isEnded == true)
-            {
-                //Type here what to do
-                Debug.Log("Done with spawning");
-            }
         }
         else
         {
