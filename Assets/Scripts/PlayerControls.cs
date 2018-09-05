@@ -5,9 +5,15 @@ using UnityEngine;
 public class PlayerControls : MonoBehaviour {
 
     public bool walk;
+    public GameObject doorText;
 
     public float playerSpeed;
-    
+
+    private void Start()
+    {
+        doorText.SetActive(false);
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -43,7 +49,22 @@ public class PlayerControls : MonoBehaviour {
 
     public void OnRelease()
     {
-        Debug.Log("stop");
         walk = false;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Door")
+        {
+            doorText.SetActive(true);
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "Door")
+        {
+            doorText.SetActive(false);
+        }
     }
 }
