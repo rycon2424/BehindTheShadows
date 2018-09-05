@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour {
 
+    [Header("PlayerHp")]
+    public static int playerHP;
+    [Header(" ")]
     public static bool Minigame = false;
     public int whatMinigame;
     public float minigameDuration;
-
     public GameObject mainScene;
     public GameObject[] minigames = new GameObject[2];
 
@@ -26,6 +28,10 @@ public class GameManager : MonoBehaviour {
     {
         mainScene.SetActive(false);
         yield return new WaitForSecondsRealtime(minigameDuration);
+        if (whatMinigame == 1)
+        {
+            UnderShadowMinigame.attackCooldown = true;
+        }
         minigames[whatMinigame].SetActive(false);
         Minigame = false;
         mainScene.SetActive(true);

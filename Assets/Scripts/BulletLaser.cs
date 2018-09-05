@@ -23,10 +23,10 @@ public class BulletLaser : MonoBehaviour
 
     IEnumerator Cooldown()
     {
-        yield return new WaitForSecondsRealtime(2f);
+        yield return new WaitForSeconds(2f);
         start = true;
         Destroy(Laser.gameObject);
-        yield return new WaitForSecondsRealtime(3f);
+        yield return new WaitForSeconds(1.5f);
         Destroy(this.gameObject);
     }
 

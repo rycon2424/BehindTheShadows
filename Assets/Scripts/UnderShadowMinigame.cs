@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class UnderShadowMinigame : MonoBehaviour {
 
-    public bool attackCooldown = true;
+    public static bool attackCooldown = true;
     public int whatAttack;
     //
     [Header("Attacks")]
     public GameObject[] Lasers = new GameObject[3];
-
-	void Update ()
+    
+    void Update ()
     {
         if (attackCooldown)
         {

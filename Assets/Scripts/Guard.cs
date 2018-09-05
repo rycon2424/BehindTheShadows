@@ -145,14 +145,14 @@ public class Guard : MonoBehaviour
 
     IEnumerator Timer()
     {
-        yield return new WaitForSecondsRealtime(time);
+        yield return new WaitForSeconds(time);
         rotateSpeed = rotateSpeed * -1;
         startTimer = true;
     }
 
     IEnumerator AlertTimer()
     {
-        yield return new WaitForSecondsRealtime(10);
+        yield return new WaitForSeconds(10);
         if (alert)
         {
             StopCoroutine(AlertTimer());
@@ -162,9 +162,9 @@ public class Guard : MonoBehaviour
     
     IEnumerator Rotate()
     {
-        yield return new WaitForSecondsRealtime(0.9f);
+        yield return new WaitForSeconds(0.9f);
         canRotate = false;
-        yield return new WaitForSecondsRealtime(0.9f);
+        yield return new WaitForSeconds(0.9f);
         canRotate = true;
     }
     #endregion
