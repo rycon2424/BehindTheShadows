@@ -173,10 +173,7 @@ public class Guard : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            //Gameobject.SetActive(false);
-            Debug.Log("Start Minigame");
-            //Gameobject.SetActive(true);
-            Debug.Log("Disable alle gameobjects");
+            GameManager.Minigame = true;
             Destroy(this.gameObject);
         }
     }
