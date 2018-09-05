@@ -7,6 +7,7 @@ public class Guard_Minigame1 : MonoBehaviour
     //Declare variables
     public GameObject player;
     public int speed;
+    public static bool death = false;
 
 	void Start ()
     {
@@ -23,10 +24,11 @@ public class Guard_Minigame1 : MonoBehaviour
         transform.Translate(Vector3.up * speed * Time.deltaTime);
 
         //Destroy Guard by leaving minigame
-        if(GameManager.Minigame == false)
+        if(death == true)
         {
             Destroy(gameObject);
         }
+
     }
 
     void OnCollisionEnter(Collision col)

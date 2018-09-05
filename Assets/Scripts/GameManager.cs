@@ -17,8 +17,7 @@ public class GameManager : MonoBehaviour {
     {
         if (Minigame)
         {
-            //whatMinigame = Random.Range(1, 3);
-            whatMinigame = 1;
+            whatMinigame = Random.Range(0, 2);
             minigames[whatMinigame].SetActive(true);
             StartCoroutine(Timer());
         }
@@ -26,14 +25,23 @@ public class GameManager : MonoBehaviour {
 
     IEnumerator Timer()
     {
+
+        Minigame = false;
         mainScene.SetActive(false);
+        if (whatMinigame == 0)
+        {
+            Guard_Minigame1.death = false;
+        }
         yield return new WaitForSecondsRealtime(minigameDuration);
         if (whatMinigame == 1)
         {
             UnderShadowMinigame.attackCooldown = true;
         }
+        if (whatMinigame == 0)
+        {
+            Guard_Minigame1.death = true;
+        }
         minigames[whatMinigame].SetActive(false);
-        Minigame = false;
         mainScene.SetActive(true);
     }
 }
