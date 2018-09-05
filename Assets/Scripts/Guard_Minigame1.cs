@@ -13,7 +13,7 @@ public class Guard_Minigame1 : MonoBehaviour
     {
         //Find player
         player = GameObject.FindGameObjectWithTag("Player");
-        speed = Random.Range(8, 12);
+        speed = Random.Range(2, 7);
 	}
 	
 	void Update ()
@@ -28,7 +28,6 @@ public class Guard_Minigame1 : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
     }
 
     void OnCollisionEnter(Collision col)

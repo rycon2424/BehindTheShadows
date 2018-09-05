@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
 guid: c58d6553451ffa74d9438543785659cb
-=======
-guid: ba33e2f1a0388ac4980a521047520447
->>>>>>> f71b69b7754451b6d68eacd7e3347acaf3bea34a
 TextureImporter:
   fileIDToRecycleName: {}
   externalObjects: {}
@@ -38,7 +34,7 @@ TextureImporter:
     mipBias: -1
     wrapU: 1
     wrapV: 1
-    wrapW: 1
+    wrapW: -1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -62,12 +58,6 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 2
     buildTarget: DefaultTexturePlatform
-<<<<<<< HEAD
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-=======
     maxTextureSize: 8192
     resizeAlgorithm: 0
     textureFormat: -1
@@ -105,7 +95,6 @@ TextureImporter:
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
->>>>>>> f71b69b7754451b6d68eacd7e3347acaf3bea34a
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -117,11 +106,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-<<<<<<< HEAD
-    spriteID: e9914e9999211214d9a022a27ac793b3
-=======
-    spriteID: 0193e28b5e217ef4f943fc0869b02d07
->>>>>>> f71b69b7754451b6d68eacd7e3347acaf3bea34a
+    spriteID: 9a8e132e5f0d76d4cb996ed23701dbec
     vertices: []
     indices: 
     edges: []

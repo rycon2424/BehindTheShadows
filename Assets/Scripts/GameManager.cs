@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour {
     public int whatMinigame;
     public float minigameDuration;
     public GameObject mainScene;
+    public GameObject mainCamera;
     public GameObject[] minigames = new GameObject[2];
 
     void Update()
@@ -28,6 +29,7 @@ public class GameManager : MonoBehaviour {
 
         Minigame = false;
         mainScene.SetActive(false);
+        mainCamera.SetActive(false);
         if (whatMinigame == 0)
         {
             Guard_Minigame1.death = false;
@@ -42,6 +44,7 @@ public class GameManager : MonoBehaviour {
             Guard_Minigame1.death = true;
         }
         minigames[whatMinigame].SetActive(false);
+        mainCamera.SetActive(true);
         mainScene.SetActive(true);
     }
 }
