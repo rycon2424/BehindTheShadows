@@ -13,7 +13,7 @@ public class Spawn : MonoBehaviour
 	
 	void Update ()
     {
-        timeToSpawn = Random.Range(0.2f, 0.5f);
+        timeToSpawn = Random.Range(0.2f, 0.8f);
         timer += Time.deltaTime;
         if (timer >= timeToSpawn)
         {
@@ -21,7 +21,7 @@ public class Spawn : MonoBehaviour
             randomZ = Random.Range(5, 8);
             Instantiate(guardPref, new Vector3(randomX, 0, randomZ), Quaternion.identity);
             timer = 0;
-            timeToSpawn = Random.Range(0.5f, 1.0f);
+            timeToSpawn = Random.Range(0.2f, 0.8f);
         }
         else
         {

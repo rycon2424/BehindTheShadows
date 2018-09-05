@@ -15,6 +15,7 @@ public class Player : MonoBehaviour
     public bool canPeek = false;
 
 
+
     void Start ()
     {
 
@@ -28,12 +29,22 @@ public class Player : MonoBehaviour
             if (Input.GetMouseButtonDown(0))
             {
                 gun.isShooting = true;
+                Rotate();
+
             }
             if (Input.GetMouseButtonUp(0))
             {
                 gun.isShooting = false;
-            }  
+            }
         }
+    }
+
+    void Rotate()
+    {
+        //Rotate the player towards input 
+        var mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        mousePos.y = transform.rotation.y;
+        transform.LookAt(mousePos);
     }
 
     void OnCollisionEnter(Collision collision)
@@ -55,14 +66,4 @@ public class Player : MonoBehaviour
             canPeek = false;
         }
     }
-
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.tag == "Guard")
-        {
-            transform.LookAt(other.transform.position);
-        }
-    }
-
-
 }

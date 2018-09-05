@@ -12,7 +12,7 @@ public class Guard_Minigame1 : MonoBehaviour
     {
         //Find player
         player = GameObject.FindGameObjectWithTag("Player");
-        speed = Random.Range(8, 15);
+        speed = Random.Range(8, 12);
 	}
 	
 	void Update ()
