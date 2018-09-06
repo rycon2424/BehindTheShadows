@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
 
     [Header("PlayerHp")]
-    public static int playerHP;
+    public Text hpText;
+    public static int playerHP = 5;
     [Header(" ")]
     public static bool Minigame = false;
     public int whatMinigame;
@@ -14,6 +16,10 @@ public class GameManager : MonoBehaviour {
     public GameObject mainCamera;
     public GameObject[] minigames = new GameObject[2];
 
+    private void Start()
+    {
+        hpText.text = playerHP.ToString();
+    }
     void Update()
     {
         if (Minigame)
@@ -42,6 +48,7 @@ public class GameManager : MonoBehaviour {
         {
             Guard_Minigame1.death = true;
         }
+        hpText.text = playerHP.ToString();
         minigames[whatMinigame].SetActive(false);
         mainCamera.SetActive(true);
         mainScene.SetActive(true);
