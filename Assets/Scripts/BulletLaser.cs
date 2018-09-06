@@ -34,6 +34,11 @@ public class BulletLaser : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
+            if (GameManager.canTakeDamage)
+            {
+                GameManager.playerHP = GameManager.playerHP - 1;
+                GameManager.canTakeDamage = false;
+            }
             Debug.Log("Hit");
         }
     }
