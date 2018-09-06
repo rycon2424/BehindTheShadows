@@ -35,7 +35,11 @@ public class Guard_Minigame1 : MonoBehaviour
         //When collides with player
         if (col.gameObject.tag == "Player")
         {
-            // - player life\
+            if (GameManager.canTakeDamage)
+            {
+                GameManager.playerHP = GameManager.playerHP - 1;
+                GameManager.canTakeDamage = false;
+            }
             Debug.Log("Leven kwijt");
             Destroy(this.gameObject);
         }
