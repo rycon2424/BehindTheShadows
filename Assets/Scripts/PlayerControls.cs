@@ -11,8 +11,12 @@ public class PlayerControls : MonoBehaviour {
 
     public float playerSpeed;
 
+    [Header(" ")]
+    public Animator anim;
+
     private void Start()
     {
+        anim = GetComponent<Animator>();
         doorText.SetActive(false);
     }
 
@@ -21,6 +25,7 @@ public class PlayerControls : MonoBehaviour {
     {
         if (walk)
         {
+            anim.SetInteger("State", 1);
             transform.Translate(Vector3.up * playerSpeed * Time.deltaTime);
         }
     }
@@ -51,6 +56,7 @@ public class PlayerControls : MonoBehaviour {
 
     public void OnRelease()
     {
+        anim.SetInteger("State", 0);
         walk = false;
     }
 
