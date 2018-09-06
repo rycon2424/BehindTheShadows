@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -64,6 +65,14 @@ public class Player : MonoBehaviour
             //You're not able to use the door or peek
             canUse = false;
             canPeek = false;
+        }
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "End")
+        {
+            SceneManager.LoadScene(2);
         }
     }
 }
