@@ -385,7 +385,6 @@ MonoBehaviour:
   rotateSpeed: 0.25
   time: 2
   anim: {fileID: 0}
-  alertAudio: {fileID: 0}
 --- !u!212 &212333633040492044
 SpriteRenderer:
   m_ObjectHideFlags: 1
