@@ -6,6 +6,8 @@ public class PlayerControls : MonoBehaviour {
 
     public bool walk;
     public GameObject doorText;
+    public bool door;
+    public bool againstDoor;
 
     public float playerSpeed;
 
@@ -52,11 +54,18 @@ public class PlayerControls : MonoBehaviour {
         walk = false;
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.tag == "Door")
         {
+            againstDoor = true;
             doorText.SetActive(true);
+            if (door)
+            {
+                other.gameObject.GetComponent<Door>().Destroy();
+                door = false;
+                doorText.SetActive(false);
+            }
         }
     }
 
@@ -64,7 +73,16 @@ public class PlayerControls : MonoBehaviour {
     {
         if (other.gameObject.tag == "Door")
         {
+            againstDoor = false;
             doorText.SetActive(false);
+        }
+    }
+
+    public void IsPressed()
+    {
+        if (againstDoor)
+        {
+            door = true;
         }
     }
 }

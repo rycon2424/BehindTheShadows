@@ -26,7 +26,6 @@ public class GameManager : MonoBehaviour {
 
     IEnumerator Timer()
     {
-
         Minigame = false;
         mainScene.SetActive(false);
         mainCamera.SetActive(false);
