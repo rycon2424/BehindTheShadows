@@ -13,8 +13,15 @@ public class Gun : MonoBehaviour
     private float shotTimer;
 
     public Transform firePoint;
-	
-	void Update ()
+
+    public AudioSource shotAudio;
+
+    void Start()
+    {
+        shotAudio = GetComponent<AudioSource>();
+    }
+
+    void Update ()
     {
 		if (isShooting)
         {
@@ -23,6 +30,7 @@ public class Gun : MonoBehaviour
             {
                 shotTimer = timeBetweenShots;
                 Bullet newBullet = Instantiate(bullet, firePoint.position, firePoint.rotation) as Bullet;
+                shotAudio.Play();
                 newBullet.speed = bulletSpeed;
             }
         }

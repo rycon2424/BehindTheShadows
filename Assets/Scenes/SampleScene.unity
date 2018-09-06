@@ -167,10 +167,6 @@ Prefab:
       propertyPath: pauseScreen
       value: 
       objectReference: {fileID: 59869552}
-    - target: {fileID: 1009207695728780, guid: 2235b970909669548afb9ef3ebc1bb9d, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2235b970909669548afb9ef3ebc1bb9d, type: 2}
   m_IsPrefabParent: 0
@@ -427,7 +423,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1270922060
 Transform:
   m_ObjectHideFlags: 0
