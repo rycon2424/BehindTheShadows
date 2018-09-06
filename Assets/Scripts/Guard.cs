@@ -38,9 +38,12 @@ public class Guard : MonoBehaviour
     [Header(" ")]
     public Animator anim;
 
+    public AudioSource alertAudio;
+
     void Start()
     {
         anim = GetComponent<Animator>();
+        alertAudio = GetComponent<AudioSource>();
         currentGuard = this.gameObject;
         playerLocation = GameObject.Find("Player");
         if (walking)
@@ -94,6 +97,7 @@ public class Guard : MonoBehaviour
     {
         if (spottedPlayer)
         {
+            alertAudio.Play();
             alert = true;
             transform.Translate(Vector3.up * speed * Time.deltaTime);
             transform.LookAt(playerLocation.transform.position);
