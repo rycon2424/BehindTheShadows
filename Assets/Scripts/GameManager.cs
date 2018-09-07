@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour {
     public static bool Minigame = false;
     public int whatMinigame;
     public float minigameDuration;
+    public GameObject realMainScene;
     public GameObject mainScene;
     public GameObject mainCamera;
     public GameObject youLostCanvas;
@@ -38,6 +39,7 @@ public class GameManager : MonoBehaviour {
         {
             if (playerHP == 0)
             {
+                realMainScene.SetActive(false);
                 youLostCanvas.SetActive(true);
             }
         }
