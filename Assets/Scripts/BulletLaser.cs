@@ -36,6 +36,7 @@ public class BulletLaser : MonoBehaviour
         {
             if (GameManager.canTakeDamage)
             {
+                BloodCanvas.Blood = true;
                 GameManager.playerHP = GameManager.playerHP - 1;
                 GameManager.canTakeDamage = false;
             }

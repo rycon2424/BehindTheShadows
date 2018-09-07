@@ -17,6 +17,7 @@ public class NextSceneString : MonoBehaviour {
     {
         yield return new WaitForSecondsRealtime(time);
         GameManager.playerHP = 5;
+        BloodCanvas.Blood = false;
         SceneManager.LoadScene(sceneName);
     }
 }

@@ -37,6 +37,7 @@ public class Guard_Minigame1 : MonoBehaviour
         {
             if (GameManager.canTakeDamage)
             {
+                BloodCanvas.Blood = true;
                 GameManager.playerHP = GameManager.playerHP - 1;
                 GameManager.canTakeDamage = false;
             }

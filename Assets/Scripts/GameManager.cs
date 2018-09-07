@@ -65,6 +65,7 @@ public class GameManager : MonoBehaviour {
         }
         hpText.text = playerHP.ToString();
         minigames[whatMinigame].SetActive(false);
+        BloodCanvas.Blood = false;
         mainCamera.SetActive(true);
         mainScene.SetActive(true);
         canTakeDamage = true;
