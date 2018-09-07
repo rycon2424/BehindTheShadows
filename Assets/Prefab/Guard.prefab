@@ -230,7 +230,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.49189144, y: 0.34372303, z: 0.2}
+  m_Size: {x: 0.2518914, y: 0.203723, z: 0.2}
   m_Center: {x: 0, y: -0.024432302, z: 0}
 --- !u!65 &65896290013859330
 BoxCollider:
@@ -242,7 +242,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.51735693, y: 0.38839868, z: 0.2}
+  m_Size: {x: 0.2873569, y: 0.2483987, z: 0.2}
   m_Center: {x: -0.00000015542577, y: -0.02394953, z: 0}
 --- !u!82 &82257731300437036
 AudioSource:

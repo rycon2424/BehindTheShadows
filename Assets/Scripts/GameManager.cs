@@ -17,11 +17,14 @@ public class GameManager : MonoBehaviour {
     public GameObject mainCamera;
     public GameObject youLostCanvas;
     public GameObject[] minigames = new GameObject[2];
-    
+    public bool pause;
+    public GameObject pauseText;
+
     private void Start()
     {
         youLostCanvas.SetActive(false);
         hpText.text = playerHP.ToString();
+        pauseText.SetActive(false);
     }
     void Update()
     {
@@ -63,5 +66,22 @@ public class GameManager : MonoBehaviour {
         mainCamera.SetActive(true);
         mainScene.SetActive(true);
         canTakeDamage = true;
+    }
+
+    public void Pause()
+    {
+        if (!pause)
+        {
+            pause = true;
+            Time.timeScale = 0;
+            pauseText.SetActive(true);
+            
+        }
+        else if (pause)
+        {
+            pause = false;
+            Time.timeScale = 1;
+            pauseText.SetActive(false);
+        }
     }
 }
